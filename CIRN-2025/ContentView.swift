@@ -13,7 +13,15 @@ struct ContentView: View {
             Image(systemName: "globe")
                 .imageScale(.large)
                 .foregroundStyle(.tint)
+            
             Text("Hello, DPI Interns")
+            
+            Button {
+                
+            } label: {
+                Text("Press Me")
+            }
+
         }
         .padding()
     }
