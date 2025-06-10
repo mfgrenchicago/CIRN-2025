@@ -19,7 +19,8 @@ struct ContentView: View {
             Button {
                 
             } label: {
-                Text("Press Me")
+                Text("Please Press Me")
+                    .fontWeight(.bold)
             }
 
         }
