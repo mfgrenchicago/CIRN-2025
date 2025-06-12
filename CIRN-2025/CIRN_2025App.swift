@@ -1,17 +1,17 @@
 //
-//  MRApp.swift
-//  MR
+//  CIRN_2025App.swift
+//  CIRN-2025
 //
-//  Created by Barbaros Zorlu on 6/4/25.
+//  Created by Pauline Lake on 6/9/25.
 //
 
 import SwiftUI
 
-struct MRApp: App {
+@main
+struct CIRN_2025App: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
         }
     }
 }
-
