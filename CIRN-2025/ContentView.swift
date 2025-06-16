@@ -14,6 +14,12 @@ struct ContentView: View {
                 .tabItem {
                     Label("Directory", systemImage: "globe")
                 }
+  
+            JobBoardView()
+                .tabItem {
+                    Label("Jobs",
+                          systemImage: "briefcase")
+                }
 		}
     }
 }
