@@ -15,7 +15,7 @@ struct ContentView: View {
                     Label("Directory", systemImage: "globe")
                 }
   
-            JobBoardView()
+			JobBoardView(viewModel: JobBoardViewModel())
                 .tabItem {
                     Label("Jobs",
                           systemImage: "briefcase")

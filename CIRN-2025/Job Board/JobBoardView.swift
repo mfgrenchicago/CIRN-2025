@@ -8,18 +8,13 @@
 import SwiftUI
 
 struct JobBoardView: View {
-    let jobs = [
-        "Chicago Steel Works",
-        "Urban Metals Inc.",
-        "West Side Gears",
-        "Lakeview Tool & Die",
-        "Midwest Fabrication Co."
-    ]
+	
+	var viewModel: JobBoardViewModel
     
     var body: some View {
         NavigationStack {
             List {
-                ForEach(jobs, id: \.self) { job in
+				ForEach(viewModel.jobs, id: \.self) { job in
                     Text(job)
                 }
             }
@@ -37,6 +32,6 @@ struct JobBoardView: View {
 }
 
 #Preview {
-    JobBoardView()
+	JobBoardView(viewModel: JobBoardViewModel())
 }
 
