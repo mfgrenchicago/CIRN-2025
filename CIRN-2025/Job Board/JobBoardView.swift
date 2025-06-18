@@ -17,7 +17,7 @@ struct JobBoardView: View {
     ]
     
     var body: some View {
-        NavigationView {
+        NavigationStack {
             List {
                 ForEach(jobs, id: \.self) { job in
                     Text(job)
@@ -26,10 +26,10 @@ struct JobBoardView: View {
             .navigationTitle("Job Boards")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Post Job") {
+                    Button("Share") {
                         // Action here
                         print("Post Job button tapped")
-                    }
+                    }.bold()
                 }
             }
         }
