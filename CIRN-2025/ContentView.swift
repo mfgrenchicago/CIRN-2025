@@ -10,7 +10,7 @@ import SwiftUI
 struct ContentView: View {
     var body: some View {
 		TabView {
-            ManufacturingCompaniesView()
+            ManufacturingCompaniesView(viewModel: ManufacturingViewModel())
                 .tabItem {
                     Label("Directory", systemImage: "globe")
                 }
