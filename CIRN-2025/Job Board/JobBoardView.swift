@@ -8,21 +8,23 @@
 import SwiftUI
 
 struct JobBoardView: View {
-    let jobs = [
-        "Chicago Steel Works",
-        "Urban Metals Inc.",
-        "West Side Gears",
-        "Lakeview Tool & Die",
-        "Midwest Fabrication Co."
-    ]
+
+    @StateObject private var viewModel = JobViewModel()
     
     var body: some View {
         NavigationStack {
-            List {
-                ForEach(jobs, id: \.self) { job in
-                    Text(job)
+            
+            List(viewModel.jobs) { job in
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(job.title)
+                        .font(.headline)
+                    Text(job.description)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
                 }
+                .padding(.vertical, 4)
             }
+            
             .navigationTitle("Job Boards")
             .toolbar {
                 ToolbarItem(placement: .navigationBarTrailing) {
