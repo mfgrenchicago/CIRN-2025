@@ -8,20 +8,12 @@
     import SwiftUI
 
     struct ManufacturingCompaniesView: View {
-        //added information into the variable/struck
-        @State var companys: [Company] = [
-            Company(name: "Company", description: "++++", email: "Contact info"),
-            Company(name: "Archer-Daniels-Midland Company", description: "++++", email: "Contact info"),
-            Company(name: "AbbVie Inc.", description: "++++", email: "Contact info"),
-            Company(name: "Mondelez International, Inc.", description: "++++", email: "Contact info"),
-            Company(name: "GE HealthCare Technologies Inc.", description: "++++", email: "Contact info")
-            ]
-        
-        
+    
+        var viewModel: ManufacturingViewModel
         var body: some View {
             NavigationStack {
                 //edits the information from the struc
-                List (companys) { company in
+                List (viewModel.companys) { company in
                     VStack(alignment: .leading) {
                         //bolds the company name
                         Text(company.name)
@@ -40,8 +32,7 @@
             }
                     
         }
-                //adds a title on the top left corner.
     }
     #Preview {
-        ManufacturingCompaniesView()
+        ManufacturingCompaniesView(viewModel: ManufacturingViewModel())
     }
