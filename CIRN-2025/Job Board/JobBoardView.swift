@@ -39,6 +39,6 @@ struct JobBoardView: View {
 }
 
 #Preview {
-    JobBoardView()
+	JobBoardView(viewModel: JobBoardViewModel())
 }
 
