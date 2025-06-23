@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct JobBoardView: View {
-
-    @StateObject private var viewModel = JobViewModel()
+    
+    var viewModel = JobBoardViewModel()
     
     var body: some View {
         NavigationStack {
@@ -39,6 +39,6 @@ struct JobBoardView: View {
 }
 
 #Preview {
-	JobBoardView(viewModel: JobBoardViewModel())
+    JobBoardView(viewModel: JobBoardViewModel())
 }
 

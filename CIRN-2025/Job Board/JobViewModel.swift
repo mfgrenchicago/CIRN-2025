@@ -7,8 +7,8 @@
 
 import Foundation
 
-class JobViewModel: ObservableObject {
-    @Published var jobs: [Job] = [
+class JobBoardViewModel  {
+     var jobs: [Job] = [
         Job(title: "Chicago Steel Works", description: "Heavy steel manufacturing company in South Chicago."),
         Job(title: "Urban Metals Inc.", description: "Recycling and sheet metal processing firm."),
         Job(title: "West Side Gears", description: "Precision gear production for industrial machines."),
