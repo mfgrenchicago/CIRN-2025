@@ -10,7 +10,7 @@ import Foundation
 class ManufacturingViewModel {
     var companys: [Company] = [
         Company(name: "Kellanova", description: "Snack & cereal maker, global", email: "investor.relations@kellanova.com", location: "Chicago, IL"),
-        Company(name: "Archer-Daniels-Midland Company", description: "Agriculture & nutrition leader", email: "admgrainmarketingservices@adm.com;", location: "Decatur, IL"),
+        Company(name: "Archer-Daniels-Midland Company", description: "Agriculture & nutrition leader", email: "admgrainmarketingservices@adm.com", location: "Decatur, IL"),
         Company(name: "AbbVie Inc.", description: "Biopharma innovator", email: "abbviemediarelations@abbvie.com", location: "North Chicago, IL"),
         Company(name: "Mondelez International, Inc.", description: "Global snacks company", email: "HRconnect@mdlz.com", location: "Chicago, IL (Deerfield HQ)"),
         Company(name: "GE HealthCare Technologies Inc.", description: "Medical tech & imaging", email: "TeamGEHealthcare@gehealthcare.com", location: "Chicago IL"),

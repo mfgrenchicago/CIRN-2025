@@ -22,12 +22,12 @@
                         Text(company.description)
                             .font(.footnote)
                             .foregroundColor(.gray)
-                        Text(company.location)
-                            .font(.footnote)
-                            .foregroundColor(.gray)
                         Text(company.email)
                             .font(.footnote)
                             .foregroundColor(Color.blue)
+                        Text(company.location)
+                            .font(.footnote)
+                            .foregroundColor(.gray)
                     }
                 }
                 //adds a title on the top left corner.
