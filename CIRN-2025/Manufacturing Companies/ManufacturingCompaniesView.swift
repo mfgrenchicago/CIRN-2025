@@ -14,7 +14,7 @@ struct ManufacturingCompaniesView: View {
         NavigationStack {
             //edits the information from the struc
             List (viewModel.companys) { company in
-                ManufacturingCompRowView(company: company)
+                ManufacturingCompanyRowView(company: company)
                 //adds a title on the top left corner.
                     .navigationTitle("Manufacturers")
             }
