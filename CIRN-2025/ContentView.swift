@@ -20,6 +20,10 @@ struct ContentView: View {
                     Label("Jobs",
                           systemImage: "briefcase")
                 }
+            MembershipView(viewModel: MembershipViewModel())
+                .tabItem {
+                    Label("membership", systemImage: "globe")
+                }
 		}
     }
 }
