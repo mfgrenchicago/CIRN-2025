@@ -6,7 +6,6 @@
 //
 
 import SwiftUI
-
 struct JobBoardView: View {
     
     var viewModel = JobBoardViewModel()
@@ -14,16 +13,12 @@ struct JobBoardView: View {
     var body: some View {
         NavigationStack {
             
-            List(viewModel.jobs) { job in
-                VStack(alignment: .leading, spacing: 4) {
-                    Text(job.title)
-                        .font(.headline)
-                    Text(job.description)
-                        .font(.subheadline)
-                        .foregroundColor(.secondary)
+                
+                List(viewModel.jobs) { job in
+                    JobBoardRowView(job: job)
                 }
-                .padding(.vertical, 4)
-            }
+
+
             
             .navigationTitle("Job Boards")
             .toolbar {
