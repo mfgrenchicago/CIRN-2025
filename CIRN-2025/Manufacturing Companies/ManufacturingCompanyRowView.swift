@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ManufacturingCompRowView: View {
+struct ManufacturingCompanyRowView: View {
     
     let company: Company
 
@@ -31,5 +31,5 @@ struct ManufacturingCompRowView: View {
 }
 
 #Preview {
-    ManufacturingCompRowView(company: Company(name: "Kellanova", description: "Snack & cereal maker, global", email: "investor.relations@kellanova.com", location: "Chicago, IL"))
+    ManufacturingCompanyRowView(company: Company(name: "Kellanova", description: "Snack & cereal maker, global", email: "investor.relations@kellanova.com", location: "Chicago, IL"))
 }
