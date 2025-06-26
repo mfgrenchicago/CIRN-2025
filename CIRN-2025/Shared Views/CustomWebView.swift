@@ -24,5 +24,5 @@ struct CustomWebView: UIViewRepresentable {
 
 #Preview {
 	
-	CustomWebView(url: URL(string: "https://sarunw.com/posts/swiftui-webview/")!)
+	CustomWebView(url: URL(string: "https://mfgren.my.site.com/cirnapp/")!)
 }
