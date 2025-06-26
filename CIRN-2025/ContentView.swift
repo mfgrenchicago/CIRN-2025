@@ -12,7 +12,7 @@ struct ContentView: View {
 		TabView {
             ManufacturingCompaniesView(viewModel: ManufacturingViewModel())
                 .tabItem {
-                    Label("Directory", systemImage: "globe")
+                    Label("Directory", systemImage: "book.fill")
                 }
   
 			JobBoardView(viewModel: JobBoardViewModel())
@@ -22,7 +22,7 @@ struct ContentView: View {
                 }
             MembershipView(viewModel: MembershipViewModel())
                 .tabItem {
-                    Label("membership", systemImage: "globe")
+                    Label("Membership", systemImage: "globe")
                 }
 		}
     }
