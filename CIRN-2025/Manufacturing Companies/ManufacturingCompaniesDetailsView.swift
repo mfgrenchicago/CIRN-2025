@@ -7,8 +7,6 @@
 
 import SwiftUI
 
-
-
 struct ManufacturingCompaniesDetailsView: View {
     
     var company: Company
