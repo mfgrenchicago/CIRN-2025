@@ -11,4 +11,9 @@ struct Job: Identifiable {
     let id = UUID()
     let title: String
     let description: String
+    let telephone: String
+    let companyURL: String
+    let email: String
+    let location: String
+    let salary: String
 }
