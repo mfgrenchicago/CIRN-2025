@@ -7,15 +7,35 @@
 
 import SwiftUI
 
-
-
 struct JobBoardDetailsView: View {
     var job: Job
-    var body: some View {
-        Text("test")
-    }
-}
 
-#Preview {
-    JobBoardDetailsView(job: Job(title: <#T##String#>, description: <#T##String#>))
+    var body: some View {
+        ScrollView {
+            VStack(alignment: .leading, spacing: 12) {
+                Text(job.title)
+                    .font(.title)
+                    .bold()
+
+                Text(job.description)
+                    .font(.subheadline)
+
+                Divider()
+
+                Group {
+                    Text("📞 Phone: \(job.telephone)")
+                    Text("✉️ Email: \(job.email)")
+                    Text("🌐 Website: \(job.companyURL)")
+                    Text("📍 Location: \(job.location)")
+                    Text("💰 Salary: \(job.salary)")
+                }
+                .font(.body)
+                .foregroundColor(.secondary)
+
+                Spacer()
+            }
+            .padding()
+        }
+        .navigationTitle("Job Details")
+    }
 }

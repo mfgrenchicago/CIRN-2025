@@ -16,7 +16,7 @@ struct JobBoardView: View {
                 
                 List(viewModel.jobs) { job in
                     NavigationLink {
-                        JobBoardDetailsView()
+                        JobBoardDetailsView(job: job)
                     } label: {
                         JobBoardRowView(job: job)
                         
