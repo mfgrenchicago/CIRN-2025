@@ -23,9 +23,10 @@ struct ManufacturingCompaniesView: View {
                     }
 
                 }
-            }
             //adds a title on the top left corner.
                 .navigationTitle("Manufacturers")
+            }
+
         }
     }
 #Preview {

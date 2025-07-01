@@ -14,10 +14,10 @@ struct ManufacturingCompaniesDetailsView: View {
     var company: Company
     
     var body: some View {
-        Text("something")
+        Text("Test")
     }
 }
 
 #Preview {
-    ManufacturingCompaniesDetailsView(company: Company(name: "Disney", description: "some", email: "@gmail", location: "chicago"))
+    ManufacturingCompaniesDetailsView(company: Company(name: "Disney", description: "some", email: "@gmail", location: "chicago", Image: URL(string: "https://example.com/kellanova.png"), Summary: "short description", phone: "", focus: ""))
 }

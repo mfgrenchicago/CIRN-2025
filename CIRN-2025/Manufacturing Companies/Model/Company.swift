@@ -14,4 +14,8 @@ import Foundation
         let description: String
         let email: String
         let location: String
+        let Image: URL?
+        let Summary: String
+        let phone: String
+        let focus: String
     }
