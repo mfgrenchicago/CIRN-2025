@@ -33,5 +33,5 @@ struct ManufacturingCompanyRowView: View {
 }
 
 #Preview {
-    ManufacturingCompanyRowView(company: Company(name: "Disney", description: "some", email: "@gmail", location: "chicago", Image: URL(string: "https://example.com/kellanova.png"), Summary: "short description", phone: "", focus: ""))
+    ManufacturingCompanyRowView(company: Company(name: "Disney", description: "some", email: "@gmail", location: "chicago", image: URL(string: "https://example.com/kellanova.png"), summary: "short description", phone: "", focus: ""))
 }
