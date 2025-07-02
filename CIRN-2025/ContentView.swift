@@ -22,7 +22,7 @@ struct ContentView: View {
                 }
             MembershipView(viewModel: MembershipViewModel())
                 .tabItem {
-                    Label("Membership", systemImage: "globe")
+                    Label("Membership", systemImage: "person.3")
                 }
 		}
     }
