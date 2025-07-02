@@ -9,13 +9,13 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-		TabView {
+        TabView {
             ManufacturingCompaniesView(viewModel: ManufacturingViewModel())
                 .tabItem {
                     Label("Directory", systemImage: "book.fill")
                 }
-  
-			JobBoardView(viewModel: JobBoardViewModel())
+            
+            JobBoardView(viewModel: JobBoardViewModel())
                 .tabItem {
                     Label("Jobs",
                           systemImage: "briefcase")
@@ -24,7 +24,11 @@ struct ContentView: View {
                 .tabItem {
                     Label("Membership", systemImage: "person.3")
                 }
-		}
+            SupportWebView()
+                .tabItem {
+                    Label("Support", systemImage: "folder")
+                }
+        }
     }
 }
 
