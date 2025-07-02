@@ -13,6 +13,20 @@ struct ManufacturingCompaniesDetailsView: View {
     
     var body: some View {
         Text(company.name)
+            .bold()
+        Divider()
+        Text(company.description)
+        Divider()
+        Text(company.email)
+        Divider()
+        Text(company.location)
+        Divider()
+        Text(company.summary)
+        Divider()
+        Text(company.phone)
+        Divider()
+        Text(company.focus)
+        Divider()
     }
 }
 
