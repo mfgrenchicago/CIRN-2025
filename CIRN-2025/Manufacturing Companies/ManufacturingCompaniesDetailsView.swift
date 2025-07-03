@@ -13,7 +13,7 @@ struct ManufacturingCompaniesDetailsView: View {
     var company: Company
     
     var body: some View {
-        VStack(alignment: .leading, spacing: 16) {
+        VStack(spacing: 16) {
             Map()
                 .frame(width: 300, height: 300)
                 .cornerRadius(10)
@@ -23,7 +23,6 @@ struct ManufacturingCompaniesDetailsView: View {
                 Label("Visit Website", systemImage: "globe")
                     .foregroundColor(.blue)
             }
-            .frame(maxWidth: .infinity, alignment: .center)
             Spacer()
         }
         .padding()
@@ -38,5 +37,5 @@ struct ManufacturingCompaniesDetailsView: View {
     }
 }
 #Preview {
-    ManufacturingCompaniesDetailsView(company: Company(name: "Disney", description: "some", email: "@gmail", location: "chicago", image: URL(string: "https://example.com/kellanova.png"), summary: "short description", phone: "", focus: ""))
+    ManufacturingCompaniesDetailsView(company: Company(name: "Disney", description: "some", email: "@gmail", location: "chicago", image: URL(string: "https://example.com/kellanova.png"), summary: "short description", phone: "223", focus: "life, eating, and something"))
 }
