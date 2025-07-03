@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct MembershipView: View {
-    
-    var viewModel: MembershipViewModel
-    var body: some View {
-        Text("Test")
-    }
+	
+	var viewModel: MembershipViewModel
+	var body: some View {
+		NavigationStack {
+			CustomWebView(url: URL(string: "https://mfgren.my.site.com/cirnapp/")!)
+				.navigationTitle(Text("Membership"))
+		}
+	}
 }
 
 #Preview {
-    MembershipView(viewModel: MembershipViewModel())
+	MembershipView(viewModel: MembershipViewModel())
 }

@@ -10,17 +10,25 @@ import SwiftUI
 struct ManufacturingCompaniesView: View {
     
     var viewModel: ManufacturingViewModel
+    
     var body: some View {
+       
         NavigationStack {
-            //edits the information from the struc
-            List (viewModel.companys) { company in
-                ManufacturingCompanyRowView(company: company)
-                //adds a title on the top left corner.
-                    .navigationTitle("Manufacturers")
+            //edits the information from the struct
+                List (viewModel.companys) { company in
+                    NavigationLink {
+                        ManufacturingCompaniesDetailsView(company: company)
+                    } label: {
+                        ManufacturingCompanyRowView(company: company)
+                    }
+
+                }
+            //adds a title on the top left corner.
+                .navigationTitle("Manufacturers")
             }
+
         }
     }
-}
 #Preview {
     ManufacturingCompaniesView(viewModel: ManufacturingViewModel())
 }
