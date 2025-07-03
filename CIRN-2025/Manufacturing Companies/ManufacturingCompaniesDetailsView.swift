@@ -6,30 +6,36 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ManufacturingCompaniesDetailsView: View {
     
     var company: Company
     
     var body: some View {
-        Text(company.name)
-            .bold()
-        Divider()
-        Text(company.description)
-        Divider()
-        Text(company.email)
-        Divider()
-        Text(company.location)
-        Divider()
-        Text(company.summary)
-        Divider()
-        Text(company.phone)
-        Divider()
-        Text(company.focus)
-        Divider()
+        VStack(spacing: 16) {
+            Map()
+                .frame(width: 300, height: 300)
+                .cornerRadius(10)
+            Text(company.focus)
+                .font(.headline)
+            Link(destination: URL(string: "https://www.kellanova.com/us/en/home.html")!) {
+                Label("Visit Website", systemImage: "globe")
+                    .foregroundColor(.blue)
+            }
+            Spacer()
+        }
+        .padding()
+        .navigationTitle(company.name)
+        .toolbar {
+            ToolbarItem(placement: .navigationBarTrailing) {
+                Button(action: {}) {
+                    Image(systemName: "phone")
+                }
+            }
+        }
     }
 }
-
 #Preview {
-    ManufacturingCompaniesDetailsView(company: Company(name: "Disney", description: "some", email: "@gmail", location: "chicago", image: URL(string: "https://example.com/kellanova.png"), summary: "short description", phone: "", focus: ""))
+    ManufacturingCompaniesDetailsView(company: Company(name: "Disney", description: "some", email: "@gmail", location: "chicago", image: URL(string: "https://example.com/kellanova.png"), summary: "short description", phone: "223", focus: "life, eating, and something"))
 }
