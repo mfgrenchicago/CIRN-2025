@@ -24,6 +24,10 @@ struct ContentView: View {
                 .tabItem {
                     Label("Membership", systemImage: "person.3")
                 }
+            AboutUsView()
+                .tabItem {
+                    Label("About Us", systemImage: "book")
+                }
             SupportWebView()
                 .tabItem {
                     Label("Support", systemImage: "folder")
