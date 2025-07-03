@@ -6,14 +6,14 @@
 //
 
 import SwiftUI
-import WebKit
 
 struct AboutUsView: View {
     var body: some View {
         NavigationStack {
-            WebView(url: URL(string: "https://www.mfgren.org/cirn")!)
+            CustomWebView(url: URL(string: "https://mfgren.my.site.com/cirnapp/")!)
                 .navigationTitle("About Us")
                 .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
+
