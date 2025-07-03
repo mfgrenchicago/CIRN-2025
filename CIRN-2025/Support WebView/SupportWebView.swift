@@ -9,7 +9,7 @@ import SwiftUI
 struct SupportWebView: View {
     var body: some View {
         NavigationStack {
-            CustomWebView(url: URL(string: "https://mfgren.my.site.com/ewintake/")!)
+			CustomWebView(websiteType: .support)
                 .navigationTitle("Support")
         }
     }

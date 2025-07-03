@@ -12,7 +12,7 @@ struct MembershipView: View {
 	var viewModel: MembershipViewModel
 	var body: some View {
 		NavigationStack {
-			CustomWebView(url: URL(string: "https://mfgren.my.site.com/cirnapp/")!)
+			CustomWebView(websiteType: .membership)
 				.navigationTitle(Text("Membership"))
 		}
 	}
