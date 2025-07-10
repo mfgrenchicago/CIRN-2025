@@ -10,6 +10,7 @@ import Foundation
 struct Job: Identifiable {
     let id = UUID()
     let title: String
+	let companyName: String
     let description: String
     let telephone: String
     let companyURL: String

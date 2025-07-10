@@ -12,7 +12,6 @@ struct AboutUsView: View {
         NavigationStack {
             CustomWebView(url: URL(string: "https://www.mfgren.org/cirn/")!)
                 .navigationTitle("About Us")
-                .navigationBarTitleDisplayMode(.inline)
         }
     }
 }

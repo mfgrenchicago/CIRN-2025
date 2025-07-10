@@ -7,40 +7,34 @@
 
 import SwiftUI
 struct JobBoardView: View {
-    
-    var viewModel = JobBoardViewModel()
-    
-    var body: some View {
-        NavigationStack {
-            
-                
-                List(viewModel.jobs) { job in
-                    NavigationLink {
-                        JobBoardDetailsView(job: job)
-                    } label: {
-                        JobBoardRowView(job: job)
-                        
-                    }
-
-                    
-                }
-
-
-            
-            .navigationTitle("Job Boards")
-            .toolbar {
-                ToolbarItem(placement: .navigationBarTrailing) {
-                    Button("Share") {
-                        // Action here
-                        print("Post Job button tapped")
-                    }.bold()
-                }
-            }
-        }
-    }
+	
+	var viewModel = JobBoardViewModel()
+	
+	var body: some View {
+		NavigationStack {
+			List(viewModel.jobs) { job in
+				NavigationLink {
+					JobBoardDetailsView(job: job)
+				} label: {
+					JobBoardRowView(job: job)
+					
+				}
+			}
+			.listStyle(.plain)
+			.navigationTitle("Job Boards")
+			.toolbar {
+				ToolbarItem(placement: .navigationBarTrailing) {
+					Button("Share") {
+						// Action here
+						print("Post Job button tapped")
+					}.bold()
+				}
+			}
+		}
+	}
 }
 
 #Preview {
-    JobBoardView(viewModel: JobBoardViewModel())
+	JobBoardView(viewModel: JobBoardViewModel())
 }
 

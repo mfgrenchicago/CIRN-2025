@@ -12,13 +12,28 @@ struct JobBoardRowView: View {
     
     var body: some View {
         
-        VStack(alignment: .leading, spacing: 4) {
-            Text(job.title)
-                .font(.headline)
-            Text(job.description)
-                .font(.subheadline)
-                .foregroundColor(.secondary)
-        }
-        .padding(.vertical, 4)
+		GroupBox {
+			VStack(alignment: .leading, spacing: 4) {
+				HStack (alignment: .top) {
+				Text(job.title)
+					.font(.headline)
+					.foregroundStyle(.primary)
+					
+				Spacer()
+					
+				Text(job.companyName)
+					.foregroundStyle(.secondary)
+					.font(.headline)
+			}
+				
+				Divider()
+				
+			
+				Text(job.description)
+					.foregroundColor(.secondary)
+					.padding(.top)
+			}
+			.padding(.vertical, 4)
+		}
     }
 }
