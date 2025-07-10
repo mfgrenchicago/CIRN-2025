@@ -11,31 +11,40 @@ struct JobBoardDetailsView: View {
     var job: Job
 
     var body: some View {
-        ScrollView {
-            VStack(alignment: .leading, spacing: 12) {
-                Text(job.title)
-                    .font(.title)
-                    .bold()
-
-                Text(job.description)
-                    .font(.subheadline)
-
-                Divider()
-
-                Group {
-                    Text("📞 Phone: \(job.telephone)")
-                    Text("✉️ Email: \(job.email)")
-                    Text("🌐 Website: \(job.companyURL)")
-                    Text("📍 Location: \(job.location)")
-                    Text("💰 Salary: \(job.salary)")
+        NavigationStack {
+            ScrollView {
+                VStack(alignment: .leading, spacing: 12) {
+                    
+                    
+                    Text(job.description)
+                        .font(.subheadline)
+                    
+                    Divider()
+                    
+                    Group {
+                        Text("📞 Phone: \(job.telephone)")
+                        Text("✉️ Email: \(job.email)")
+                        Text("🌐 Website: \(job.companyURL)")
+                        Text("📍 Location: \(job.location)")
+                        Text("💰 Salary: \(job.salary)")
+                    }
+                    .font(.body)
+                    .foregroundColor(.secondary)
+                    
+                    Spacer()
                 }
-                .font(.body)
-                .foregroundColor(.secondary)
-
-                Spacer()
+                .padding()
             }
-            .padding()
+            .navigationTitle(job.title)
+            .toolbar {
+                ToolbarItem(placement: .navigationBarTrailing) {
+                    Button {
+                        // Action here
+                    } label: {
+                        Image(systemName: "envelope")
+                    }
+                }
+            }
         }
-        .navigationTitle("Job Details")
     }
 }
