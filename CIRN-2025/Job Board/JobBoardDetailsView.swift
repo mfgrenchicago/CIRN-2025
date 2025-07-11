@@ -12,28 +12,21 @@ struct JobBoardDetailsView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
+            Form {
+                Section(header: Text("Job Details")){
+                    LabeledContent("Title:", value: job.title)
                     
-                    
-                    Text(job.description)
-                        .font(.subheadline)
-                    
-                    Divider()
-                    
-                    Group {
-                        Text("📞 Phone: \(job.telephone)")
-                        Text("✉️ Email: \(job.email)")
-                        Text("🌐 Website: \(job.companyURL)")
-                        Text("📍 Location: \(job.location)")
-                        Text("💰 Salary: \(job.salary)")
-                    }
-                    .font(.body)
-                    .foregroundColor(.secondary)
-                    
-                    Spacer()
+                    LabeledContent("Location:", value: job.location)
                 }
-                .padding()
+                
+                Section(header: Text("Salary")){
+                    LabeledContent("Salary:", value: job.salary)
+                }
+                
+                Section(header: Text("Description")){
+                    TextEditor(text: .constant(job.description))
+                        .frame(height: 300)
+                }
             }
             .navigationTitle(job.title)
             .toolbar {
