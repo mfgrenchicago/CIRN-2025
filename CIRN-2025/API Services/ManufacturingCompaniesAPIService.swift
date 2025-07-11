@@ -37,7 +37,10 @@ enum ManufacturersAPIError: Error {
 // MARK: API key for using the API
 // TODO: Encrypt/Hide API Key better!
 struct APIKey {
-	static var key: String = "AIzaSyDS8ExuhM1G9qd6ZnVYACkhqGUpHx5fOvI"
+	static var key: String {
+		let apiKey = Bundle.main.infoDictionary?["API_KEY"] as? String ?? ""
+		return apiKey
+	}
 }
 
 // Class which uses the `ManufacturersAPIService` to make API calls

@@ -4,5 +4,7 @@
 <dict>
 	<key>UILaunchScreen</key>
 	<dict/>
+	<key>API_KEY</key>
+	<string>AIzaSyDS8ExuhM1G9qd6ZnVYACkhqGUpHx5fOvI</string>
 </dict>
 </plist>
