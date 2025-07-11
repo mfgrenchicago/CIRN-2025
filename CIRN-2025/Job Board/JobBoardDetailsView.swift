@@ -14,36 +14,18 @@ struct JobBoardDetailsView: View {
         NavigationStack {
             Form {
                 Section(header: Text("Job Details")){
-                    HStack{
-                        Text("Title:")
-                        Spacer()
-                        Text(job.title)
-                            .foregroundColor(.gray)
-                    }
+                    LabeledContent("Title:", value: job.title)
                     
-                    HStack{
-                        Text("Location:")
-                        Spacer()
-                        Text(job.location)
-                            .foregroundColor(.gray)
-                    }
+                    LabeledContent("Location:", value: job.location)
                 }
                 
                 Section(header: Text("Salary")){
-                    HStack{
-                        Text("Salary:")
-                        Spacer()
-                        Text(job.salary)
-                            .foregroundColor(.gray)
-                    }
+                    LabeledContent("Salary:", value: job.salary)
                 }
                 
                 Section(header: Text("Description")){
-                    VStack{
-                        Spacer()
-                        Text(job.description)
-                            .padding(.bottom, 250)
-                    }
+                    TextEditor(text: .constant(job.description))
+                        .frame(height: 300)
                 }
             }
             .navigationTitle(job.title)
