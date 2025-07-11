@@ -7,11 +7,16 @@
 
 import Foundation
 
-class JobBoardViewModel {
-	var jobs: [Job] = []
+class JobBoardViewModel: ObservableObject {
+	@Published var jobs: [Job] = []
 	
+    @Published var isLoading: Bool = false
+    
+    @Published var showErrorAlert: Bool = false
+    
+    @MainActor
 	func fetchJobs() {
-		
+		isLoading = true
 		jobs = [] // clear previous
 		
 		Task {
@@ -22,8 +27,10 @@ class JobBoardViewModel {
 			if success {
 				jobs = hardcodedJobs
 			} else {
-				// Maybe do some error stuff here
+				showErrorAlert = true
+                
 			}
+            isLoading = false
 		}
 	}
 	
