@@ -12,28 +12,39 @@ struct JobBoardDetailsView: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(alignment: .leading, spacing: 12) {
-                    
-                    
-                    Text(job.description)
-                        .font(.subheadline)
-                    
-                    Divider()
-                    
-                    Group {
-                        Text("📞 Phone: \(job.telephone)")
-                        Text("✉️ Email: \(job.email)")
-                        Text("🌐 Website: \(job.companyURL)")
-                        Text("📍 Location: \(job.location)")
-                        Text("💰 Salary: \(job.salary)")
+            Form {
+                Section(header: Text("Job Details")){
+                    HStack{
+                        Text("Title:")
+                        Spacer()
+                        Text(job.title)
+                            .foregroundColor(.gray)
                     }
-                    .font(.body)
-                    .foregroundColor(.secondary)
                     
-                    Spacer()
+                    HStack{
+                        Text("Location:")
+                        Spacer()
+                        Text(job.location)
+                            .foregroundColor(.gray)
+                    }
                 }
-                .padding()
+                
+                Section(header: Text("Salary")){
+                    HStack{
+                        Text("Salary:")
+                        Spacer()
+                        Text(job.salary)
+                            .foregroundColor(.gray)
+                    }
+                }
+                
+                Section(header: Text("Description")){
+                    VStack{
+                        Spacer()
+                        Text(job.description)
+                            .padding(.bottom, 250)
+                    }
+                }
             }
             .navigationTitle(job.title)
             .toolbar {
