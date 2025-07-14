@@ -7,7 +7,7 @@ import SwiftUI
 struct CustomWebView: UIViewRepresentable {
 
     // Website url passed to load in the webview
-    let url: URL
+    let websiteType: CIRNWebsiteType
 
     func makeUIView(context: Context) -> WKWebView {
         return WKWebView()
@@ -15,7 +15,7 @@ struct CustomWebView: UIViewRepresentable {
 
     func updateUIView(_ webView: WKWebView, context: Context) {
         // Create `urlRequest` using the `url`
-        let request = URLRequest(url: url)
+		let request = URLRequest(url: websiteType.url)
 
         // Show the website in the webview
         webView.load(request)
@@ -24,5 +24,5 @@ struct CustomWebView: UIViewRepresentable {
 
 #Preview {
 
-    CustomWebView(url: URL(string: "https://mfgren.my.site.com/cirnapp/")!)
+    CustomWebView(websiteType: .membership)
 }
