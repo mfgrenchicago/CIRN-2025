@@ -43,6 +43,7 @@ struct JobBoardView: View {
             .overlay {
                 if viewModel.isLoading == true {
                     ProgressView()
+                        .controlSize(.extraLarge)
                 }
             }
             .alert(isPresented: $viewModel.showErrorAlert) {
