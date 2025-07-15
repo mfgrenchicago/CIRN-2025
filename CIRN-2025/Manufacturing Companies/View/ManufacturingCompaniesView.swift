@@ -9,26 +9,26 @@ import SwiftUI
 
 struct ManufacturingCompaniesView: View {
     
-    var viewModel: ManufacturingViewModel
+    @StateObject var viewModel: ManufacturingViewModel
     
     var body: some View {
        
         NavigationStack {
-            //edits the information from the struct
-                List (viewModel.companys) { company in
-                    NavigationLink {
-                        ManufacturingCompaniesDetailsView(company: company)
-                    } label: {
-                        ManufacturingCompanyRowView(company: company)
-                    }
-
-                }
-            //adds a title on the top left corner.
-                .navigationTitle("Manufacturers")
+			VStack {
+				//edits the information from the struct
+					List (viewModel.companys) { company in
+						ManufacturingCompanyRowView(company: company)
+					}
+				//adds a title on the top left corner.
+					.navigationTitle("Manufacturers")
+			}
+			.task {
+				await viewModel.fetchManufacturers()
+			}
             }
 
         }
     }
 #Preview {
-    ManufacturingCompaniesView(viewModel: ManufacturingViewModel())
+	ManufacturingCompaniesView(viewModel: ManufacturingViewModel(apiService: ManufacturersAPIServiceImpl()))
 }

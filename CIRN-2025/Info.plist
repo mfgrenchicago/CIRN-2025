@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>Some_Text</key>
+	<string>AIzaSyDS8ExuhM1G9qd6ZnVYACkhqGUpHx5fOvI</string>
 	<key>UILaunchScreen</key>
 	<dict/>
 </dict>
