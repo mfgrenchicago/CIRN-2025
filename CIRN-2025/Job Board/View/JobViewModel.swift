@@ -20,11 +20,11 @@ class JobBoardViewModel: ObservableObject {
 		jobs = [] // clear previous
 		
 		Task {
-			try? await Task.sleep(nanoseconds: 5_000_000_000) // simulate 5 sec delay
+			try? await Task.sleep(nanoseconds: 1_000_000_000) // simulate 5 sec delay
 			
 			let success = Bool.random() // randomly fail or succeed
 			
-			if success {
+			if true {
 				jobs = hardcodedJobs
 			} else {
 				showErrorAlert = true
