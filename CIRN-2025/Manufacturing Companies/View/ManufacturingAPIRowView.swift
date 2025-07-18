@@ -19,14 +19,14 @@ struct ManufacturingAPIRowView: View {
                     .bold()
                 Text(company.shortFormattedAddress)
                     .font(.footnote)
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.primary)
                 Text(company.nationalPhoneNumber ?? "")
                     .font(.footnote)
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.secondary)
                 // mock description
                 Text("Chicago's trusted partner for durable, custom-made manufacturing solutions. Delivering excellence to industries nationwide for over a decade.")
                     .font(.footnote)
-                    .foregroundColor(.gray)
+                    .foregroundStyle(.tertiary)
             }
         }
     }
