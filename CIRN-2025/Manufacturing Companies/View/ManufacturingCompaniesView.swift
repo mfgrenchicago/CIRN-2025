@@ -15,10 +15,16 @@ struct ManufacturingCompaniesView: View {
        
         NavigationStack {
 			VStack {
-				//edits the information from the struct
-					List (viewModel.companys) { company in
-						ManufacturingCompanyRowView(company: company)
-					}
+                if true {
+                    List (viewModel.apiCompanies) { company in
+                        ManufacturingAPIRowView(company: company)
+                    }
+                } else {
+                    List (viewModel.companys) { company in
+                        ManufacturingCompanyRowView(company: company)
+                    }
+                }
+            }
 				//adds a title on the top left corner.
 					.navigationTitle("Manufacturers")
 			}
@@ -28,7 +34,6 @@ struct ManufacturingCompaniesView: View {
             }
 
         }
-    }
 #Preview {
 	ManufacturingCompaniesView(viewModel: ManufacturingViewModel(apiService: ManufacturersAPIServiceImpl()))
 }

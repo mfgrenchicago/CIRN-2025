@@ -38,7 +38,8 @@ class ManufacturingViewModel: ObservableObject {
 		
 		do {
 			// Use `ManufacturersAPIService` to get data
-			let companies = try await apiService.fetchManufacturers(query: "Add wa u wa search for here")
+            let searchText: String = "Currently operating manufacturing companies in Chicagoland"
+			let companies = try await apiService.fetchManufacturers(query: searchText)
 			
 			self.apiCompanies = companies
 		} catch {
