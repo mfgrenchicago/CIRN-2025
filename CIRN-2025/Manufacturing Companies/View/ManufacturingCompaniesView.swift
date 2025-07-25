@@ -17,7 +17,12 @@ struct ManufacturingCompaniesView: View {
 			VStack {
                 if true {
                     List (viewModel.apiCompanies) { company in
-                        ManufacturingAPIRowView(company: company)
+                        NavigationLink {
+                            ManufacturingAPIDetailsView(apiCompany: company)
+                        } label: {
+                            ManufacturingAPIRowView(company: company)
+                        }
+
                     }
                 } else {
                     List (viewModel.companys) { company in

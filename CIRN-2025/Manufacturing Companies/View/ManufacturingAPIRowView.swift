@@ -17,6 +17,7 @@ struct ManufacturingAPIRowView: View {
             VStack(alignment: .leading){
                 Text(company.displayName?.text ?? "")
                     .bold()
+                    .padding(.bottom, 5)
                 Text(company.shortFormattedAddress)
                     .font(.footnote)
                     .foregroundStyle(.primary)
