@@ -18,7 +18,7 @@ struct ManufacturingCompaniesView: View {
                 if true {
                     List (viewModel.apiCompanies) { company in
                         NavigationLink {
-                            ManufacturingAPIDetailsView(apiCompany: company)
+                            ManufacturingAPIDetailsView(viewModel: ManufacturingAPIDetailsViewModel(apiCompany: company))
                         } label: {
                             ManufacturingAPIRowView(company: company)
                         }

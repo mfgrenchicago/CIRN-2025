@@ -9,30 +9,21 @@ import SwiftUI
 import MapKit
 
 struct ManufacturingAPIDetailsView: View {
-    var apiCompany: APICompany
     
-    
-    var businessLocation: CLLocationCoordinate2D {
-        CLLocationCoordinate2D(latitude: apiCompany.location.latitude, longitude: apiCompany.location.longitude)
-    }
-    
-    var cameraPosition: MapCameraPosition {
-        .region(.init(center: businessLocation, latitudinalMeters: 1000, longitudinalMeters: 1000))
-    }
-    
+    @StateObject var viewModel: ManufacturingAPIDetailsViewModel    
     
     var body: some View {
         ScrollView{
             VStack {
                 Spacer()
                 
-                Text(apiCompany.displayName?.text ?? "")
+                Text(viewModel.apiCompany.displayName?.text ?? "")
                     .bold()
                     .font(.title2)
                     .multilineTextAlignment(.center)
                     
                 
-                Text(apiCompany.shortFormattedAddress)
+                Text(viewModel.apiCompany.shortFormattedAddress)
                 Divider()
                 
                 // Mock description
@@ -40,8 +31,8 @@ struct ManufacturingAPIDetailsView: View {
                     .multilineTextAlignment(.center)
                     .padding()
                
-                Map(initialPosition: cameraPosition) {
-                    Marker(apiCompany.displayName?.text ?? "", coordinate: businessLocation)
+                Map(initialPosition: viewModel.cameraPosition) {
+                    Marker(viewModel.apiCompany.displayName?.text ?? "", coordinate: viewModel.businessLocation)
                 }
                 .frame(height: 200)
                 .ignoresSafeArea()
@@ -50,7 +41,7 @@ struct ManufacturingAPIDetailsView: View {
                 
                
                 
-                if let website = apiCompany.websiteUri {
+                if let website = viewModel.apiCompany.websiteUri {
                     Link(destination: website) {
                         HStack {
                             Image(systemName: "globe")
@@ -64,7 +55,7 @@ struct ManufacturingAPIDetailsView: View {
                     }
                     .padding(.horizontal, 16)
                     
-                } else{
+                } else {
                     HStack {
                         Spacer()
                         Text("No Website Available")
@@ -80,7 +71,7 @@ struct ManufacturingAPIDetailsView: View {
                 
                 DisclosureGroup("Reviews") {
                     VStack {
-                        if let reviews = apiCompany.reviews, !reviews.isEmpty {
+                        if let reviews = viewModel.apiCompany.reviews, !reviews.isEmpty {
                             ForEach(reviews) { review in
                                 VStack {
                                     Text(review.text?.text ?? "")
@@ -98,11 +89,10 @@ struct ManufacturingAPIDetailsView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.horizontal, 16)
                 
-                AsyncImage(url: apiCompany.firstPhotoURL) { image in
+                AsyncImage(url: viewModel.apiCompany.firstPhotoURL) { image in
                     image
-                        //.resizable()
                         .frame(width: 200, height: 200)
-                        .cornerRadius(10)
+                        .clipShape(RoundedRectangle(cornerRadius: 10))
                         .padding()
                 } placeholder: {
                     ProgressView()
