@@ -11,7 +11,7 @@ class ManufacturingViewModel: ObservableObject {
 	
 	// MARK: Data from API
 	@Published var apiCompanies: [APICompany] = []
-	@Published var searchText: String = ""
+	// @Published var searchText: String = ""
 	
 	@Published var isLoading: Bool = false
 	
@@ -19,6 +19,8 @@ class ManufacturingViewModel: ObservableObject {
 	@Published var errorMessage: String = ""
 	
 	let apiService: ManufacturersAPIService
+    
+    let searchText: String = "Currently operating manufacturing companies in Chicagoland"
 	
 	init(apiService: ManufacturersAPIService) {
 		self.apiService = apiService
@@ -38,7 +40,6 @@ class ManufacturingViewModel: ObservableObject {
 		
 		do {
 			// Use `ManufacturersAPIService` to get data
-            let searchText: String = "Currently operating manufacturing companies in Chicagoland"
 			let companies = try await apiService.fetchManufacturers(query: searchText)
 			
 			self.apiCompanies = companies
