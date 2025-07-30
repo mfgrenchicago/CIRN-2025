@@ -45,12 +45,15 @@ struct ManufacturingAPIDetailsView: View {
                     Link(destination: website) {
                         HStack {
                             Image(systemName: "globe")
+                                .foregroundColor(.white)
                             Text("Website")
+                                .foregroundColor(.white)
                             Spacer()
                             Image(systemName: "arrow.up.right")
+                                .foregroundColor(.white)
                         }
                         .padding()
-                        .background(.blue.opacity(0.1))
+                        .background(.blue.opacity(0.5))
                         .clipShape(RoundedRectangle(cornerRadius: 10))
                     }
                     .padding(.horizontal, 16)
@@ -62,7 +65,7 @@ struct ManufacturingAPIDetailsView: View {
                         Spacer()
                     }
                     .padding()
-                    .background(.gray.opacity(0.1))
+                    .background(.white.opacity(0.5))
                     .clipShape(RoundedRectangle(cornerRadius: 10))
                     .padding(.horizontal, 16)
                 }
@@ -85,7 +88,7 @@ struct ManufacturingAPIDetailsView: View {
                     }
                 }
                 .padding()
-                .background(.gray.opacity(0.1))
+                .background(.white.opacity(0.5))
                 .clipShape(RoundedRectangle(cornerRadius: 10))
                 .padding(.horizontal, 16)
                 
@@ -99,6 +102,7 @@ struct ManufacturingAPIDetailsView: View {
                 }
                 
             }
+            .background(LinearGradient(colors: [Color.purple.opacity(0.3), Color.white], startPoint: .topLeading, endPoint: .bottomTrailing))
         }
     }
     
