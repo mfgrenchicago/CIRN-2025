@@ -26,6 +26,8 @@ class ManufacturingViewModel: ObservableObject {
 		self.apiService = apiService
 	}
 	
+    var page: Int = 0  
+    
 	@MainActor
 	func fetchManufacturers() async {
 		// Defer is the last thing called in the function
